@@ -30,7 +30,10 @@ class SeoUrl extends \Opencart\System\Engine\Controller {
 
 					if ($seo_url_info) {
 						$this->request->get[$seo_url_info['key']] = html_entity_decode($seo_url_info['value'], ENT_QUOTES, 'UTF-8');
-					}
+					}else {
+					$this->request->get['route'] = 'error/not_found';
+					break;
+				}
 				}
 			}
 		}
